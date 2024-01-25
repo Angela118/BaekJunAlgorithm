@@ -7,7 +7,6 @@ if __name__ == '__main__':
     for _ in range(testcase):
         N, M = map(int, sys.stdin.readline().split())
         doc_priority = deque(map(int, sys.stdin.readline().split()))
-        # doc_priority = deque([(i,idx) for idx, i in enumerate(doc_priority)])   # index와 짝 지어주기
         idx = deque(range(len(doc_priority)))
         
         turn=0
