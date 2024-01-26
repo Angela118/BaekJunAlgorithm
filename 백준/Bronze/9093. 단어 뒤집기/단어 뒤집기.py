@@ -1,5 +1,4 @@
 import sys
-from collections import deque
 
 def reverse_word(input_sentence):
     words_list = input_sentence.split()
