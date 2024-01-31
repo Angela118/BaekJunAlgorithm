@@ -1,22 +1,14 @@
 import sys
-from collections import defaultdict
+from collections import Counter
 
 
 if __name__ == '__main__':
     N = int(sys.stdin.readline())
-    sg_nums = map(int, sys.stdin.readline().split())
+    card_list = map(int, sys.stdin.readline().split())
     M = int(sys.stdin.readline())
-    correct = map(int, sys.stdin.readline().split())
+    target_list = map(int, sys.stdin.readline().split())
     ans=[]
-    counts = defaultdict(int)
-    
-    for num in sg_nums:
-        counts[num]+=1
 
-    for num in correct:
-        if num in counts:
-            ans.append(str(counts[num]))
-        else:
-            ans.append(str(0))
+    counts = Counter(card_list)
 
-    print(*ans)
+    print(" ".join([str(counts[target]) if target in counts else str(0) for target in target_list]))
