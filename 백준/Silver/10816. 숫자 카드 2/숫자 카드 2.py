@@ -19,4 +19,4 @@ if __name__ == '__main__':
         else:
             ans.append(str(0))
 
-    print(" ".join(ans))
+    print(*ans)
