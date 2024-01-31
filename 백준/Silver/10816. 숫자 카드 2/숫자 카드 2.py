@@ -9,6 +9,7 @@ if __name__ == '__main__':
     correct = map(int, sys.stdin.readline().split())
     ans=[]
     counts = defaultdict(int)
+    
     for num in sg_nums:
         counts[num]+=1
 
