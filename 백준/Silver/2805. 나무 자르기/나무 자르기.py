@@ -1,7 +1,7 @@
 import sys
 
 def binary_tree(trees_height, target):
-    start = 0
+    start = 1
     end = max(trees_height)
     
     while start<=end:    
@@ -12,8 +12,6 @@ def binary_tree(trees_height, target):
             if tree >= mid:
                 sum_trees += (tree-mid)
 
-        # if sum_trees == target:
-        #     return(mid)
         if sum_trees >= target:
             start = mid+1
         else:
