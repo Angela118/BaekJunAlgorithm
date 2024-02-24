@@ -1,15 +1,15 @@
 import sys
 
 
-# 서 동 남 북 (-1,0), (1,0), (0,-1), (0,1)
-dx = [-1, 1, 0, 0]
+# 동 서 남 북 (1,0), (-1,0), (0,-1), (0,1)
+dx = [1, -1, 0, 0]
 dy = [0, 0, -1, 1]
 
-def dfs(x, y, visited, total):
+def dfs(x, y, visited, total_prob):
     global prob_ans
 
     if len(visited) == (N+1):   # 시작점을 포함하기 때문에 (N+1)
-        prob_ans += total
+        prob_ans += total_prob
         return
     
     for i in range(4):    # 동 서 남 북
@@ -18,7 +18,7 @@ def dfs(x, y, visited, total):
 
         if [nx, ny] not in visited:     # 방문한 적 없으면
             visited.append([nx, ny])
-            dfs(nx, ny, visited, total*prob_ewsn[i])
+            dfs(nx, ny, visited, total_prob*prob_ewsn[i])
             visited.pop()
 
 
