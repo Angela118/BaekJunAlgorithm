@@ -1,15 +1,14 @@
 import sys
+from math import *
 import heapq
 
 if __name__ == '__main__':
     N = int(sys.stdin.readline())
     
-    values=[]
-    for _ in range(N):
-        values.append(int(sys.stdin.readline()))
-
     heap=[]
-    for val in values:
+    for _ in range(N):
+        val = int(sys.stdin.readline())
+        
         if val==0:
             if not heap:
                 print(0)
