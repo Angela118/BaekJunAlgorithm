@@ -1,5 +1,14 @@
 from itertools import permutations
 
+def isPrime(per):
+    if per<2:
+        return False
+    
+    for i in range(2, int(per**0.5)+1):
+        if per%i == 0:
+            return False
+        
+    return True
 
 def solution(numbers):
     numbers = [n for n in numbers]  # numbers를 하나씩 자른다.
@@ -17,16 +26,7 @@ def solution(numbers):
     
     answer=0
     for per in per_list:
-        if per<2:
-            continue
-        
-        flag=True
-        for i in range(2, int(per**0.5)+1):
-            if per%i == 0:
-                flag=False
-                break
-                
-        if flag:
+        if isPrime(per):
             answer+=1
             
     
