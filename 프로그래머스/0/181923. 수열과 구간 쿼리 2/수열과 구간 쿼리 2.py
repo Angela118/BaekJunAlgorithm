@@ -1,10 +1,10 @@
 def solution(arr, queries):
     answer = []
     
-    for j in range(len(queries)):
+    for s, e, k in queries:
         temp=[]
-        for i in arr[queries[j][0]:queries[j][1]+1]:
-            if (i > queries[j][2]):
+        for i in arr[s:e+1]:
+            if (i > k):
                 temp.append(i)
         
         if not temp:
