@@ -7,9 +7,11 @@ def solution(a, b, c, d):
             dict_num[n]+=1
         else:
             dict_num[n]=1
-            
-    # 주사위의 같은 숫자의 갯수에 따라 딕셔너리 정렬
+    
+    
+    # 주사위의 같은 숫자의 갯수(values)에 따라 딕셔너리 정렬 후, 리스트로 변경
     dict_num = sorted(dict_num, key=lambda x: dict_num[x])
+    
     
     if len(dict_num)==1:    # 네 개가 같은 수인 경우
         return (1111*dict_num[0])
